@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="column">
+    <!-- Step 14: Create for loop -->
+    {% for i in menu%}
+    <p>
+        <a href=" {% url 'menu_item' pk=i.pk %}">
+            {{ i.name }}
+        </a>
+        <span class="menu-price">${{ i.price }}.00</span>
+    </p>
+    {% endfor %}
+    <!-- Step 14: End or loop -->
+</div>
+<!--End col-->
+{% endblock %}
